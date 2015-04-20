@@ -1,0 +1,5 @@
+set -e -x
+
+echo "Extracting rootfs"
+tar xzf rootfs/rootfsppc64.tgz -C ${BOSH_INSTALL_TARGET}
+

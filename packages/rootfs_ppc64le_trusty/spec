@@ -1,0 +1,5 @@
+---
+name: rootfs_ppc64le_trusty
+files:
+- rootfs/rootfsppc64.tgz
+

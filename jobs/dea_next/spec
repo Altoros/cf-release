@@ -20,6 +20,9 @@ packages:
 - rootfs_lucid64
 - rootfs_cflinuxfs2
 - ruby-2.1.4
+- rootfs_ppc64le_trusty
+- gccgo
+- buildpack_cache
 
 properties:
   domain:
@@ -60,6 +63,11 @@ properties:
   dea_next.memory_overcommit_factor:
     description:
     default: 1
+  dea_next.stacks:
+    default:
+    - "lucid64"
+    - "ppc64le"
+    description: "Support of ppc64le stack"
   dea_next.streaming_timeout:
     description:
     default: 60
