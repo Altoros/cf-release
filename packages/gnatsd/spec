@@ -1,5 +1,6 @@
 name: gnatsd
 dependencies:
   - golang1.3
+  - gccgo
 files:
   - gnatsd/**/*.go

@@ -10,6 +10,7 @@ templates:
 packages:
   - common
   - gnatsd
+  - gccgo
 
 properties:
   networks.apps:

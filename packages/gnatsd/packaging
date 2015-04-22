@@ -1,7 +1,14 @@
 set -e
 
-export GOROOT=$(readlink -nf /var/vcap/packages/golang1.3)
-export GOPATH=$BOSH_INSTALL_TARGET
+if [ "`uname -m`" == "ppc64le" ]; then
+  export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
+  export LD_LIBRARY_PATH=$GOROOT/lib64
+  export GOPATH=$BOSH_INSTALL_TARGET
+else
+  export GOROOT=$(readlink -nf /var/vcap/packages/golang1.3)
+  export GOPATH=${BOSH_INSTALL_TARGET}/go
+fi
+
 export PATH=$GOROOT/bin:$PATH
 
 mkdir -p $GOPATH/src/github.com/apcera/
