@@ -9,6 +9,7 @@ templates:
 packages:
   - common
   - etcd_metrics_server
+  - gccgo
 
 properties:
   etcd_metrics_server.etcd.machine:

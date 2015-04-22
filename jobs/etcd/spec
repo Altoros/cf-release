@@ -9,6 +9,7 @@ templates:
 packages:
   - common
   - etcd
+  - gccgo
 
 properties:
   heartbeat_interval_in_milliseconds:
