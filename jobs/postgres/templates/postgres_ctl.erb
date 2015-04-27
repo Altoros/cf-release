@@ -15,7 +15,7 @@ PIDFILE=$RUN_DIR/postgres.pid
 
 HOST='0.0.0.0'
 PORT="<%= p("databases.port") %>"
-LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH
 
 source /var/vcap/packages/common/utils.sh
 
