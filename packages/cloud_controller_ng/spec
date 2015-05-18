@@ -9,3 +9,6 @@ files:
 - cloud_controller_ng/{db,lib,bin,app}/**/*
 - cloud_controller_ng/vendor/errors/**/*.yml
 - cloud_controller_ng/config/initializers/**/*
+- dea_next_gems/dea_next_gems_vendor_cache.tar.gz
+- mysql/client-5.1.62-rel14.14-xxx-Linux-ppc64le.tar.gz
+

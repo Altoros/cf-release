@@ -11,6 +11,7 @@ templates:
 packages:
   - common
   - postgres
+  - gccgo
 
 properties:
   databases.db_scheme:

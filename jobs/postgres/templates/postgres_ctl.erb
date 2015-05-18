@@ -55,7 +55,8 @@ case "$1" in
       chown vcap:vcap $DATA_DIR
 
       # initdb creates data directories
-      su - vcap -c "$PACKAGE_DIR/bin/initdb -E utf8 --locale en_US.UTF-8 -D $DATA_DIR"
+      su - vcap -c "export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH ;\
+                 $PACKAGE_DIR/bin/initdb -E utf8 --locale en_US.UTF-8 -D $DATA_DIR"
 
       mkdir -p $DATA_DIR/pg_log
       chown vcap:vcap $DATA_DIR/pg_log
@@ -65,7 +66,8 @@ case "$1" in
     chown vcap:vcap $DATA_DIR/{postgresql,pg_hba}.conf
 
     echo "Starting PostgreSQL: "
-    su - vcap -c "$PACKAGE_DIR/bin/pg_ctl -o \"-h $HOST -p $PORT\" \
+    su - vcap -c "export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH ;\
+                 $PACKAGE_DIR/bin/pg_ctl -o \"-h $HOST -p $PORT\" \
                   -w start -D $DATA_DIR -l \"$DATA_DIR/pg_log/startup.log\""
 
     echo "PostgreSQL started successfully"
@@ -77,17 +79,20 @@ case "$1" in
       # TODO remove unused roles automatically
       # Default permissions are: nosuperuser nologin inherit nocreatedb.
       # Will fail if role already exists, which is OK
+      export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH 
       $PACKAGE_DIR/bin/psql -U vcap -p $PORT -d postgres \
                             -c "CREATE ROLE \"<%= role["name"] %>\""
       set -e
 
       echo "Setting password for role <%= role["name"] %>..."
+      export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH 
       $PACKAGE_DIR/bin/psql -U vcap -p $PORT -d postgres \
                             -c "ALTER ROLE \"<%= role["name"] %>\" \
                                 WITH LOGIN PASSWORD '<%= role["password"] %>'"
 
       <% if role["permissions"] %>
         echo "Adding permissions <%= role["permissions"].join(' ') %> for role <%= role["name"] %>..."
+        export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH 
         $PACKAGE_DIR/bin/psql -U vcap -p $PORT -d postgres \
                           -c "ALTER ROLE \"<%= role["name"] %>\" \
                               WITH <%= role["permissions"].join(' ') %>"
@@ -98,12 +103,14 @@ case "$1" in
     <% p("databases.databases", []).each do |database| %>
       echo "Trying to create database <%= database["name"] %>..."
       set +e
-      su - vcap -c "$PACKAGE_DIR/bin/createdb \"<%= database["name"] %>\" -p $PORT"
+      su - vcap -c "export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH ;\
+                     $PACKAGE_DIR/bin/createdb \"<%= database["name"] %>\" -p $PORT"
       set -e
 
       <% if database["citext"] %>
         echo "Trying to install citext..."
         set +e
+        export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH 
         $PACKAGE_DIR/bin/psql -U vcap -p $PORT \
                               -d "<%= database["name"] %>" \
                               -f $PACKAGE_DIR/share/postgresql/contrib/citext.sql
@@ -112,6 +119,7 @@ case "$1" in
 
       <% if database["run_on_every_startup"] %>
         <% database["run_on_every_startup"].each do |query| %>
+          export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH 
           $PACKAGE_DIR/bin/psql -U vcap -p $PORT \
                                 -d "<%= database["name"] %>" \
                                 -c "<%= query %>"
@@ -123,13 +131,15 @@ case "$1" in
 
   stop)
     echo "Stopping PostgreSQL: "
-    su - vcap -c "$PACKAGE_DIR/bin/pg_ctl stop -m fast -w -D $DATA_DIR"
+    su - vcap -c "export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH ;\
+                    $PACKAGE_DIR/bin/pg_ctl stop -m fast -w -D $DATA_DIR"
     wait_pidfile $PIDFILE
 
     ;;
 
   status)
-    su - vcap -c "$PACKAGE_DIR/bin/pg_ctl status -D $DATA_DIR"
+    su - vcap -c "export LD_LIBRARY_PATH=$PACKAGE_DIR/lib:$LD_LIBRARY_PATH ;\
+                    $PACKAGE_DIR/bin/pg_ctl status -D $DATA_DIR"
 
     ;;
 

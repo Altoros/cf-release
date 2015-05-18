@@ -22,7 +22,7 @@ packages:
 - ruby-2.1.4
 - rootfs_ppc64le_trusty
 - gccgo
-- buildpack_cache
+
 
 properties:
   domain:
