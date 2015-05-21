@@ -1,5 +1,5 @@
 set -e -x
 
-echo "Extracting golang"
+echo "Extracting golang "
 tar xvjf gccgo_ppc64le_trusty/gccgo.tar.bz2 -C ${BOSH_INSTALL_TARGET}
 
