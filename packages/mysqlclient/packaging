@@ -1,7 +1,7 @@
 set -e -x
 
 if [ "`uname -m`" == "ppc64le" ]; then
-VERSION=5.1.62-rel14.14-xxx-Linux-ppc64le
+VERSION=5.1.62-rel14.14-435-Linux-ppc64le
 else
 VERSION=5.1.62-rel13.3-435-Linux-x86_64
 fi
