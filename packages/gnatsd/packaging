@@ -4,6 +4,8 @@ if [ "`uname -m`" == "ppc64le" ]; then
   export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
   export LD_LIBRARY_PATH=$GOROOT/lib64
   export GOPATH=$BOSH_INSTALL_TARGET
+  mkdir -p /usr/local/gccgo/libexec/gcc/powerpc64le-unknown-linux-gnu/
+  ln -s $GOROOT /usr/local/gccgo
 else
   export GOROOT=$(readlink -nf /var/vcap/packages/golang1.3)
   export GOPATH=${BOSH_INSTALL_TARGET}/go
