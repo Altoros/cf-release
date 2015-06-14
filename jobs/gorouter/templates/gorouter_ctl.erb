@@ -66,6 +66,7 @@ case $1 in
     if [ "`uname -m`" == "ppc64le" ]; then
       export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
       export LD_LIBRARY_PATH=$GOROOT/lib64
+      cp -f $GOROOT/lib64/libgo.so.7 /lib/powerpc64le-linux-gnu
     fi
 
     exec chpst -u vcap:vcap /var/vcap/packages/gorouter/bin/gorouter \
