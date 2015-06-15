@@ -15,6 +15,11 @@ if [ `uname` = "Darwin" ]; then
   cd java
   tar zxvf ../uaa/openjdk-1.7.0-u40-unofficial-macosx-x86_64-bundle.tgz --exclude="._*"
   export JAVA_HOME=${BUILD_DIR}/java/Contents/Home
+elif [ `uname -m` = "ppc64le" ]; then
+  mkdir java
+  cd java
+  tar zxvf ../uaa/java-7-openjdk-ppc64el.tar.gz
+  export JAVA_HOME=${BUILD_DIR}/java
 elif [ `uname` = "Linux" ]; then
   mkdir java
   cd java
@@ -41,3 +46,4 @@ rm -rf java
 rm -rf uaa/openjdk-1.7.0-u40-unofficial-linux-amd64.tgz
 rm -rf uaa/openjdk-1.7.0-u40-unofficial-macosx-x86_64-bundle.tgz
 ${BUILD_DIR}/uaa/.clean-cf-release-build
+
