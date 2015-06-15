@@ -64,7 +64,7 @@ case $1 in
     setcap cap_net_bind_service=+ep /var/vcap/packages/gorouter/bin/gorouter
 
     if [ "`uname -m`" == "ppc64le" ]; then
-      export LD_LIBRARY_PATH=/var/vcap/packages/gorouter/lib
+      cp /var/vcap/packages/gorouter/lib/libgo.so.7 /lib/powerpc64le-linux-gnu
     fi
 
     exec chpst -u vcap:vcap /var/vcap/packages/gorouter/bin/gorouter \
