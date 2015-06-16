@@ -1,0 +1,9 @@
+---
+name: etcd_metrics_server
+
+dependencies:
+  - golang1.3
+  - gccgo
+
+files:
+  - etcd-metrics-server/**/*.go
