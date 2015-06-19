@@ -21,4 +21,6 @@ fi
 export GOPATH=$BOSH_INSTALL_TARGET:${REPO_DIR}/Godeps/_workspace
 export PATH=$GOROOT/bin:$PATH
 
+# -compiler gccgo -gccgoflags '-static-libgo'
+
 go install ${REPO_NAME}
