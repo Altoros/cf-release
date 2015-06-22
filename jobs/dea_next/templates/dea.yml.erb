@@ -68,6 +68,8 @@ instance:
   disk_inode_limit: <%= p("dea_next.instance_disk_inode_limit") %>
 
 stacks:
+  - name: ppc64le_trusty
+    package_path: /var/vcap/packages/rootfs_ppc64le_trusty
   - name: lucid64
     package_path: /var/vcap/packages/rootfs_lucid64
   - name: cflinuxfs2

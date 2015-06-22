@@ -11,3 +11,4 @@ files:
 - warden/warden-client/lib/**/*
 - warden/warden-protocol/warden-protocol.gemspec
 - warden/warden-protocol/lib/**/*
+- dea_next_gems/dea_next_gems_vendor_cache.tar.gz
