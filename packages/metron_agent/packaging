@@ -4,14 +4,13 @@ if [ "`uname -m`" == "ppc64le" ]; then
   export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
   export LD_LIBRARY_PATH=$GOROOT/lib64
   ln -s $GOROOT /usr/local/gccgo
-  # mkdir -p $BOSH_INSTALL_TARGET/lib
-  # cp $GOROOT/lib64/libgo.so.7.0.0 $BOSH_INSTALL_TARGET/lib/libgo.so.7
   BUILD_OPTIONS="-compiler gccgo -gccgoflags '-static-libgo'"
 else
   export GOROOT=$(readlink -nf /var/vcap/packages/golang1.4)
-  export PATH=$GOROOT/bin:$PATH
-  export GOPATH=$PWD/loggregator
 fi
+
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=$PWD/loggregator
 
 go install $BUILD_OPTIONS metron
 cp -a $PWD/loggregator/bin/metron ${BOSH_INSTALL_TARGET}
