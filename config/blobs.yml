@@ -35,10 +35,6 @@ nginx/newrelic_nginx_agent.tar.gz:
   object_id: cad4fada-4a11-4b1a-a884-c6f58dacead9
   sha: 98a1b10475371705932fea4769f8ac1b0451106f
   size: 5222
-golang/go1.2.1.linux-amd64.tar.gz:
-  object_id: a5a3eaf9-54ac-47b6-bcf7-5ad59eafe787
-  sha: 7605f577ff6ac2d608a3a4e829b255ae2ebc8dcf
-  size: 56123695
 uaa/openjdk-1.7.0_51.tar.gz:
   object_id: 67b767f3-4032-4970-8535-05dbf7c696a5
   sha: 0f4d3705e3a4e1452250def57cfc36ab6cc37355
@@ -51,14 +47,10 @@ uaa/openjdk-1.7.0-u40-unofficial-macosx-x86_64-bundle.tgz:
   object_id: 4cfb77f4-ea89-4d3d-85ad-2d0f3d84e676
   sha: ac7febc5bbff2dedf8add624a727a4c0ac6c3d10
   size: 65991397
-cli/cf-darwin-amd64.tgz:
-  object_id: 5de011ed-b541-411f-bc22-dd8723567ee1
-  sha: 01590797213107447a54cc68f9fec4de50ed3ddd
-  size: 4753530
 cli/cf-linux-amd64.tgz:
-  object_id: 67983167-946b-423b-8d41-18b678f9051c
-  sha: f845800310e4b702a39a2f1191e3d71862630103
-  size: 4803309
+  object_id: c1f7d817-ada4-4636-85db-646c497132bd
+  sha: a5296502c3258d6e1701adfcce5f33b091f6d018
+  size: 4939902
 golang/go1.3.1.linux-amd64.tar.gz:
   object_id: b4778c9a-1994-4dda-b7a2-97ae93e1b835
   sha: 3af011cc19b21c7180f2604fd85fbc4ddde97143
@@ -67,22 +59,6 @@ uaa/apache-tomcat-7.0.55.tar.gz:
   object_id: 23a06e10-020a-46a1-9af0-62c8c0e02aaf
   sha: 4e23f1e3d6d24e0affebe78f6f5c5d5a49eb4e37
   size: 8941662
-ruby-2.1.4/bundler-1.7.4.gem:
-  object_id: bef69ead-5089-44e4-bf9c-113737aeb4c9
-  sha: e11eb7f9b807f5b7f3beb7c23a06803c7484aebc
-  size: 301568
-ruby-2.1.4/ruby-2.1.4.tar.gz:
-  object_id: 69165e9f-ec26-410a-986a-f6855862846c
-  sha: 29e9cfdd9e989b7621d7696ef3f970262a08dbc3
-  size: 15127418
-ruby-2.1.4/rubygems-2.4.2.tgz:
-  object_id: 7d77db2c-b21d-4b05-a4e3-25e71154e11d
-  sha: 538f7a264798377e5a63056f979c43f441613ff3
-  size: 440555
-ruby-2.1.4/yaml-0.1.6.tar.gz:
-  object_id: b3ed7d5e-4c46-4c81-8ac7-04d070dd9cc8
-  sha: f3d404e11bec3c4efcddfd14c42d46f1aabe0b5d
-  size: 503012
 nginx/nginx-1.6.2.tar.gz:
   object_id: 041b7bdb-b770-4c6c-b797-565b7b1a423d
   sha: 1a5458bc15acf90eea16353a1dd17285cf97ec35
@@ -100,13 +76,9 @@ haproxy/pcre-8.36.tar.gz:
   sha: fb537757756818133d8157ec878bc11f5a93ef4d
   size: 2009464
 rootfs/cflinuxfs2.tar.gz:
-  object_id: 04a2c4fc-3287-4525-9110-3ab3d84230b8
-  sha: eb288a3674db3c79d20180259d9728fd48f16e59
-  size: 221433266
-rootfs/lucid64.tar.gz:
-  object_id: 1030f8d6-15c8-48d6-a99f-db8742b136f4
-  sha: de986f12fff53ce0569b190972d9decc98966716
-  size: 148073387
+  object_id: 53169ec4-47a6-4683-8e05-485d2e29ea51
+  sha: 45914689d88484f7ad4efc6a75b9877f48837da4
+  size: 249225633
 golang/go1.4.2.linux-amd64.tar.gz:
   object_id: bfaf73b1-de68-4c94-9a02-555245b2eb8d
   sha: 5020af94b52b65cc9b6f11d50a67e4bae07b0aff
@@ -115,27 +87,6 @@ consul/consul_0.5.0_linux_amd64.zip:
   object_id: 3e6c1e47-95a5-45ef-aeec-2cb4cc4c529a
   sha: 00e4c6e9ff2fb326d3b586fd86c3037f3b7e0974
   size: 4669655
-go-buildpack/go_buildpack-cached-v1.2.0.zip:
-  object_id: da609e02-aec5-4d54-93bc-86ca0b44eed7
-  sha: e58788c873ddbecd641532f32ce4d535b2a79f81
-  size: 663443569
-python-buildpack/python_buildpack-cached-v1.2.0.zip:
-  object_id: 3e8561a1-7cdc-45c2-9eff-b8d49ebc4e88
-  sha: 2ca4545ab99ac2a2e430f58fe1ec55fe6b96a7b3
-  size: 685706721
-ruby-buildpack/ruby_buildpack-cached-v1.3.0.zip:
-  object_id: 3d8d4bfc-91b2-419b-857d-9f26e31340bd
-  sha: 5dde3ea0e15908554eaa5b12df38652436c469b5
-  size: 966348817
-php-buildpack/php_buildpack-offline-v3.1.0.zip:
-  object_id: b817bdc3-4765-423c-aebd-195b980550a3
-  sha: 9bb6c36e13976288c62794f8dcb06965ef898033
-  size: 1089981446
-nodejs-buildpack/nodejs_buildpack-cached-v1.2.1.zip:
-  object_id: 21a8eb83-97b9-49cd-ba57-bd2cca1f9133
-  sha: !binary |-
-    OGM1MzQwNTdmYzFmZTBjY2JkZmE1NTQ3YzI1ZjMwYWQ3OWRkMzY4ZA==
-  size: 437119230
 java-buildpack/java-buildpack-offline-v3.0.zip:
   object_id: 8fe6e89a-aa63-4119-8fd0-23715820f31d
   sha: a300c3fca530dc16345dbd6feb26b13897d05265
@@ -144,3 +95,79 @@ java-buildpack/java-buildpack-v3.0.zip:
   object_id: 34bff29b-9ec3-42aa-891f-db301f7f978d
   sha: 177715b012505051d14611bf706f0ebe50cc55f0
   size: 150091
+ruby-2.1.6/bundler-1.9.4.gem:
+  object_id: 567b4de7-54cd-473e-870a-680ab5d6632c
+  sha: ea3f17a76a8249049b5589c9b5421af72189babc
+  size: 244224
+ruby-2.1.6/ruby-2.1.6.tar.gz:
+  object_id: 97c9a690-a164-42c4-8755-6af2f114845b
+  sha: 426289b6647ce35ad101091825b6e7e5fce207f3
+  size: 15141710
+ruby-2.1.6/rubygems-2.4.6.tgz:
+  object_id: 250b97aa-7419-4982-ab5f-8cd45f2a6857
+  sha: bf59306c0f6c37551875e70ce8ccfb1cbc60c28b
+  size: 447588
+ruby-2.1.6/yaml-0.1.6.tar.gz:
+  object_id: 9b62536a-3cae-416d-a243-78e97b41e346
+  sha: f3d404e11bec3c4efcddfd14c42d46f1aabe0b5d
+  size: 503012
+php-buildpack/php_buildpack-cached-v3.2.2.zip:
+  object_id: 4cbd86d2-a739-4a13-90f1-58f6097e718a
+  sha: 3a6e7a88754029e6efbaa0d6905fca6086bb0b64
+  size: 846464023
+go-buildpack/go_buildpack-cached-v1.3.1.zip:
+  object_id: 5e671c4a-4b81-41fe-a4a7-9bb6cabe933a
+  sha: 82d19816c39e0e77b25ce599117fa07b2e06efe8
+  size: 463782558
+binary-buildpack/binary_buildpack-cached-v1.0.0.zip:
+  object_id: 291a8b75-c692-4b93-8079-ceb930b23c10
+  sha: 93636f4aa1b7cf7f063fac135c6691c6dcd7a2d0
+  size: 8405
+consul/consul-template_0.9.0_linux_amd64.tar.gz:
+  object_id: e83bcdcd-2f31-4b73-8cf8-516d54e8f59a
+  sha: a44e441f9347abe64956e5bb30c4d4b0464d1f73
+  size: 2460384
+uaa/newrelic.jar:
+  object_id: 2b9d1b59-bc86-4089-95ba-2c0374fe3737
+  sha: a5070963fc84bea27acc1d492cb9e3143f0c4715
+  size: 7064901
+uaa/apache-tomcat-7.0.61.tar.gz:
+  object_id: fdad7b89-61f5-4cd1-a003-49c4d872412b
+  sha: 98ccbc95d029291e81bf818879ec8a0aa14465df
+  size: 8816567
+openjdk/openjdk-1.7.0_79.tar.gz:
+  object_id: b7c40a5c-6297-4158-b54a-23f89982f13a
+  sha: 2ca6e142325a3e054efbf5b72995cb9ce416d607
+  size: 36244117
+openjdk/openjdk-1.7.0-u40-unofficial-macosx-x86_64-bundle.tgz:
+  object_id: 6f065666-1889-4564-8dd9-8344b4a3e974
+  sha: ac7febc5bbff2dedf8add624a727a4c0ac6c3d10
+  size: 65991397
+openjdk/openjdk-1.7.0-u40-unofficial-linux-amd64.tgz:
+  object_id: 1c5d266f-9c90-4160-9fc5-b3b30f2c248a
+  sha: bb41c68e0dc26ad71635d4bff8da16246ded10f0
+  size: 42574624
+ruby-buildpack/ruby_buildpack-cached-v1.4.2.zip:
+  object_id: 9affa18e-acc3-424e-b264-73483792d0cb
+  sha: 08d3ceedc59229eb78fefa09f9e8ed39f0ae79cc
+  size: 382942164
+postgres/postgresql-9.4.2.tar.gz:
+  object_id: 4d807bf7-94bc-449f-a0c3-549642df3085
+  sha: 7a70474f9b44fea1b345e48bd5e4418bccf41f3f
+  size: 23092865
+staticfile-buildpack/staticfile_buildpack-cached-v1.1.0.zip:
+  object_id: a449f533-f9a9-4680-bb65-bb5fb1c607bd
+  sha: fe8e6bed345a88c387424dc47c213cc13345fcf4
+  size: 4684378
+nodejs-buildpack/nodejs_buildpack-cached-v1.3.4.zip:
+  object_id: c6a02aaf-b917-4102-b243-1ffff9796dbc
+  sha: 7ad1ca449292596ba58b4a2f37ef9a5c404b558e
+  size: 73107547
+python-buildpack/python_buildpack-cached-v1.3.5.zip:
+  object_id: 4546ee42-3240-487e-a05a-0936e2fd9f00
+  sha: 6245126aff2ef88fd05edbb12a94610f16e67f87
+  size: 449080634
+rtr/rtr-linux-amd64.tgz:
+  object_id: 9ff89e27-0326-498e-bd04-6010e941f039
+  sha: cf58eb5f92211d57f282c264dea2b1ad2d5213dd
+  size: 2189778
