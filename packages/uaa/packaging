@@ -2,7 +2,7 @@ set -e -x
 
 if [ `uname -m` = "ppc64le" ]; then
 cd ${BOSH_INSTALL_TARGET}
-mkdir jdk && tar zxvf ${BOSH_COMPILE_TARGET}/uaa/java-7-openjdk-ppc64el.tar.gz -C jdk && chmod -R 777 jdk
+mkdir jdk && tar zxvf ${BOSH_COMPILE_TARGET}/openjdk/java-7-openjdk-ppc64el.tgz -C jdk && chmod -R 777 jdk
 else
 cd ${BOSH_INSTALL_TARGET}
 mkdir jdk && tar zxvf ${BOSH_COMPILE_TARGET}/uaa/openjdk-1.7.0_51.tar.gz -C jdk
