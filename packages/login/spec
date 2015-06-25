@@ -5,4 +5,5 @@ dependencies:
 files:
 - login/**/*
 - uaa/**/*
+- openjdk/**/*
 - cf-registrar-bundle-for-identity/**/*
