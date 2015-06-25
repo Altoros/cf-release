@@ -19,7 +19,7 @@ elif [ `uname -m` = "ppc64le" ]; then
   mkdir java
   cd java
   tar zxvf ../uaa/java-7-openjdk-ppc64el.tgz
-  export JAVA_HOME=${BUILD_DIR}/java/java-7-openjdk-ppc64el
+  export JAVA_HOME=${BUILD_DIR}/java
 elif [ `uname` = "Linux" ]; then
   mkdir java
   cd java
