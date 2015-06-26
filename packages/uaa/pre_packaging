@@ -1,7 +1,7 @@
 set -e -x
 
 if [[ "`bundle --version`" != *"1.7.4"* ]]; then
-  echo "You should use bundler with version 1.7.4"
+  echo "You should use bundler version 1.7.4"
   exit 2
 fi
 
