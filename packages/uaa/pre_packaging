@@ -1,5 +1,10 @@
 set -e -x
 
+if [[ "`bundle --version`" != *"1.7.4"* ]]; then
+  echo "You should use bundler with version 1.7.4"
+  exit 2
+fi
+
 #registrar information
 cd ${BUILD_DIR}/cf-registrar-bundle-for-identity
 BUNDLE_WITHOUT=development:test bundle package --all
