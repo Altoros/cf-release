@@ -29,13 +29,13 @@ packages:
   - libpq
   - mysqlclient
   - ruby-2.1.4
-  - buildpack_java
-  - buildpack_java_offline
-  - buildpack_ruby
-  - buildpack_nodejs
-  - buildpack_go
-  - buildpack_python
-  - buildpack_php
+  # - buildpack_java
+  # - buildpack_java_offline
+  # - buildpack_ruby
+  # - buildpack_nodejs
+  # - buildpack_go
+  # - buildpack_python
+  # - buildpack_php
 
 properties:
   ssl.skip_cert_verify:
