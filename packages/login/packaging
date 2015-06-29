@@ -1,7 +1,14 @@
 set -e -x
 
 cd ${BOSH_INSTALL_TARGET}
-mkdir jdk && tar zxvf ${BOSH_COMPILE_TARGET}/uaa/openjdk-1.7.0_51.tar.gz -C jdk
+if [ `uname -m` = "ppc64le" ]; then
+  JDK_ARCHIVE_PATH=${BOSH_COMPILE_TARGET}/openjdk/java-7-openjdk-ppc64el.tgz
+elif
+  JDK_ARCHIVE_PATH=${BOSH_COMPILE_TARGET}/uaa/openjdk-1.7.0_51.tar.gz
+fi
+
+mkdir jdk && tar zxvf $JDK_ARCHIVE_PATH -C jdk
+
 if [[ $? != 0 ]] ; then
   echo "Cannot unpack JDK"
   exit 1
