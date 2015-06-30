@@ -9,9 +9,9 @@ if [ "`uname -m`" == "ppc64le" ]; then
   cp -f $GOROOT/lib64/libgo.so.7 /lib/powerpc64le-linux-gnu
 else
   export GOROOT=$(readlink -nf /var/vcap/packages/golang1.3)
-  export GOPATH=${BOSH_INSTALL_TARGET}/go
 fi
 
+export GOPATH=${BOSH_INSTALL_TARGET}/go
 export PATH=$GOROOT/bin:$PATH
 
 mkdir -p $GOPATH/src/github.com/apcera/
