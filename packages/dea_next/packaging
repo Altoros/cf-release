@@ -12,8 +12,12 @@ cd ${BOSH_INSTALL_TARGET}
 if [ "`uname -m`" == "ppc64le" ]; then
   export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
   export LD_LIBRARY_PATH=$GOROOT/lib64
+  export BUILD_OPTIONS="-compiler gccgo -gccgoflags '-static-libgo'"
+  # we need following steps to make gccgo work
+  ln -s $GOROOT /usr/local/gccgo
+  cp -f $GOROOT/lib64/libgo.so.7 /lib/powerpc64le-linux-gnu
 else
-export GOROOT=$(readlink -nf /var/vcap/packages/golang1.3)
+  export GOROOT=$(readlink -nf /var/vcap/packages/golang1.3)
 fi
 
 export PATH=$GOROOT/bin:$PATH
@@ -21,5 +25,5 @@ export PATH=$GOROOT/bin:$PATH
 export GOPATH=${BOSH_INSTALL_TARGET}/go
 
 cd $GOPATH
-go install runner
+go install $BUILD_OPTIONS runner
 
