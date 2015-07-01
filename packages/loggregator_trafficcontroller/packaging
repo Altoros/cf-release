@@ -1,8 +1,18 @@
 set -e -x
 
-export GOROOT=$(readlink -nf /var/vcap/packages/golang1.4)
+if [ "`uname -m`" == "ppc64le" ]; then
+  export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
+  export LD_LIBRARY_PATH=$GOROOT/lib64
+  export BUILD_OPTIONS="-compiler gccgo -gccgoflags '-static-libgo'"
+  # we need following steps to make gccgo work
+  ln -s $GOROOT /usr/local/gccgo
+  cp -f $GOROOT/lib64/libgo.so.7 /lib/powerpc64le-linux-gnu
+else
+  export GOROOT=$(readlink -nf /var/vcap/packages/golang1.4)
+fi
+
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$PWD/loggregator
 
-go install trafficcontroller
+go install $BUILD_OPTIONS trafficcontroller
 cp -a $PWD/loggregator/bin/trafficcontroller ${BOSH_INSTALL_TARGET}
