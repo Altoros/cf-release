@@ -5,7 +5,14 @@ source /var/vcap/packages/common/utils.sh
 case $1 in
 
   start)
-    dpkg --unpack -E /var/vcap/packages/debian_nfs_server/nfs-kernel-server_1.2.8-6ubuntu1_ppc64el.deb
+    if [ `uname -m` == "ppc64le" ]; then
+      nfs_server_version=1.2.8-6ubuntu1.1_ppc64el
+    else
+      nfs_server_version=1.2.0-4ubuntu4.1_amd64
+    fi
+
+    dpkg --unpack -E /var/vcap/packages/debian_nfs_server/nfs-kernel-server_1%3a$nfs_server_version.deb
+
     rm -rf /etc/init.d/nfs-kernel-server
     mkdir -p /var/vcap/store/shared
     chown vcap:vcap /var/vcap/store/shared
