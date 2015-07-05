@@ -1,5 +1,0 @@
----
-name: gccgo
-files:
-- gccgo_ppc64le_trusty/gccgo.tar.bz2 
-

@@ -1,7 +1,0 @@
----
-name: etcd
-dependencies:
-  - golang1.3
-  - gccgo
-files:
-  - etcd/**/*

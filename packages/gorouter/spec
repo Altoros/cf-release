@@ -1,8 +1,0 @@
----
-name: gorouter
-dependencies:
-- golang1.4
-- gccgo
-files:
-- gorouter/**/*.{go,golden,proto,c,h,}
-- gorouter/**/Makefile
