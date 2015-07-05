@@ -1,5 +1,6 @@
 set -e -x
 
 cd ${BUILD_DIR}/collector
+bundle install
 BUNDLE_WITHOUT=development:test bundle package --all
 

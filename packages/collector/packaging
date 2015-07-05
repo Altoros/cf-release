@@ -4,4 +4,10 @@ cp -a collector/* ${BOSH_INSTALL_TARGET}
 
 cd ${BOSH_INSTALL_TARGET}
 
-/var/vcap/packages/ruby-2.1.4/bin/bundle install --local --deployment --without development test
+bundle_cmd=/var/vcap/packages/ruby-2.1.4/bin/bundle
+
+if [ "`uname -m`" == "ppc64le" ]; then
+  $bundle_cmd config build.nokogiri --use-system-libraries
+fi
+
+$bundle_cmd install --local --deployment --without development test
