@@ -14,5 +14,5 @@ fi
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$PWD/loggregator
 
-go install syslog_drain_binder
+go install $BUILD_OPTIONS syslog_drain_binder
 cp -a $PWD/loggregator/bin/syslog_drain_binder ${BOSH_INSTALL_TARGET}
