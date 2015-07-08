@@ -65,7 +65,7 @@ properties:
   dea_next.stacks:
     default:
     - "lucid64"
-    - "ppc64le"
+    - "ppc64le_trusty"
     description: "Support of ppc64le stack"
   dea_next.streaming_timeout:
     description:
