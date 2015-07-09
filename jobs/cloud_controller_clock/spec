@@ -188,7 +188,7 @@ properties:
         description: "Power based ubuntu trusty rootfs"
     description: "Tag used by the DEA to describe capabilities (i.e. 'Windows7', 'python-linux'). DEA and CC must agree."
   cc.default_stack:
-    default: "ppc64le"
+    default: "trustyppc64le"
     description: "The default stack to use if no custom stack is specified by an app."
 
   cc.staging_upload_user:

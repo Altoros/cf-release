@@ -2,4 +2,11 @@ set -e -x
 
 cd ${BUILD_DIR}/cloud_controller_ng
 bundle install
+
+if [ "`uname -m`" == "ppc64le" ]; then
+  # for some reason fog-json is not added to vendor/cache on power arch
+  # this line fixes it
+  echo "gem 'fog-json'" >> Gemfile
+fi
+
 BUNDLE_WITHOUT=development:test bundle package --all
