@@ -10,7 +10,7 @@ cd ${BOSH_INSTALL_TARGET}
 /var/vcap/packages/ruby-2.1.4/bin/bundle install --local --deployment --without=development test
 
 if [ "`uname -m`" == "ppc64le" ]; then
-  export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
+  export GOROOT=$(readlink -nf /var/vcap/packages/gccgo)
   export LD_LIBRARY_PATH=$GOROOT/lib64
   export BUILD_OPTIONS="-compiler gccgo -gccgoflags '-static-libgo'"
   # we need following steps to make gccgo work

@@ -9,7 +9,7 @@ CONFIG_DIR=$JOB_DIR/config
 source /var/vcap/packages/common/utils.sh
 
 if [ "`uname -m`" == "ppc64le" ]; then
-      export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
+      export GOROOT=$(readlink -nf /var/vcap/packages/gccgo)
       export LD_LIBRARY_PATH=$GOROOT/lib64
 fi
 

@@ -9,7 +9,7 @@ mkdir -p $(dirname $REPO_DIR)
 cp -a $(basename $REPO_NAME)/ $REPO_DIR
 
 if [ "`uname -m`" == "ppc64le" ]; then
-  export GOROOT=$(readlink -nf /var/vcap/packages/gccgo/gccgo)
+  export GOROOT=$(readlink -nf /var/vcap/packages/gccgo)
   export LD_LIBRARY_PATH=$GOROOT/lib64
   export BUILD_OPTIONS="-compiler gccgo -gccgoflags '-static-libgo'"
   # we need following steps to make gccgo work
